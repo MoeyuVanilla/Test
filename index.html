@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>抽屉新热榜项目</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+  </head>
+  <body>
+
+    
+
+    <p id="toptoptop"></p>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    	<div class="container">
+    		<img class="logo" src="./images/logo.png">
+    		<img class="logo_text" src="./images/logo_text.png">
+    		<ul>
+    			<li>
+    				<a href="#">首页</a>
+    			</li>
+    			<li>
+    				<a href="#" class="dropdown" id="dropdownMenu1" data-toggle="dropdown">专区<span class="caret"></span></a>
+    				<ul class="dropdown-menu">
+    					<li>
+    						<a href="#">42区</a>
+    					</li>
+    					<li>
+    						<a href="#">段子</a>
+    					</li>
+    					<li>
+    						<a href="#">图片</a>
+    					</li>
+    					<li>
+    						<a href="#">挨踢1024</a>
+    					</li>
+    					<li>
+    						<a href="#">你问我答</a>
+    					</li>
+    				</ul>
+    			</li>
+    			<li>
+    				<a href="#">人类发布</a>
+    			</li>
+    			<li>
+    				<a href="#">视频</a>
+    			</li>
+    			<li>
+    				<a href="#" class="dropdown" id="dropdownMenu2" data-toggle="dropdown">发现<span class="caret"></span></a>
+    				<ul class="dropdown-menu">
+    					<li>
+    						<a href="#">推荐</a>
+    					</li>
+    					<li>
+    						<a href="#">社会</a>
+    					</li>
+    					<li>
+    						<a href="#">世界</a>
+    					</li>
+    					<li>
+    						<a href="#">科技</a>
+    					</li>
+    					<li>
+    						<a href="#">娱乐</a>
+    					</li>
+    					<li>
+    						<a href="#">体育</a>
+    					</li>
+    					<li>
+    						<a href="#">财经</a>
+    					</li>
+    					<li>
+    						<a href="#">军事</a>
+    					</li>
+    				</ul>
+    			</li>
+    			<li>
+    				<a href="#">话题</a>
+    			</li>
+
+    		</ul>
+    		<div class="search">
+    			
+				<input type="text" name="" placeholder="搜索">
+				<span class="iconfont">&#xe614;</span>
+    		
+    		</div>
+    		
+
+    		<div class="top-right">
+    			<a href="#" class="iconfont" id="publishInfo">
+   					<img src="images/publish.png">
+    			</a>
+    			<button id="loginButton" data-toggle="modal"  class="login">登录</button>
+    		</div>
+    	</div>
+		
+		
+	</nav>
+
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            <h3 class="modal-title" id="myModalLabel">
+		            	<img src="images/leftline.png">
+		            	不正经的资讯社区
+		            	<img src="images/rightline.png">
+		        	</h4>
+		        </div>
+		        <div class="modal-body">
+		        	<div class="dblogin">
+		        		<a href="#">手机号登录</a>
+		        		<a href="#">用户名登录</a>
+		        	</div>
+		        	<div class="user">
+		        		<a href="#"></a>
+		        		<input type="text" name="" id="setPhone" placeholder="手机号">
+		        	</div>
+		        	<div class="pwd">
+		        		<input type="text" name="" id="setPwd" placeholder="密码">
+		        	</div>
+		        	<div class="forget">
+		        		<a href="#">忘记密码？</a>
+		        	</div>
+		        </div>
+		        <div class="modal-footer">
+		            
+		            <button type="button" class="btn btn-primary log-in">登录</button>
+		            <span>
+		            	还没加入抽屉？马上去<a id="registerLink" data-toggle="modal" href="#">注册</a>
+		            </span>
+		        </div>
+		    </div>
+		    <!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+		</div>
+
+
+		<div class="modal fade" id="myRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            <h3 class="modal-title" id="myModalLabel">
+		            	<img src="images/leftline.png">
+		            	注册开启抽友身份
+		            	<img src="images/rightline.png">
+		        	</h4>
+		        </div>
+		        <div class="modal-body">
+		        	<div class="phone">
+		        		<a href="#">中国+86</a>
+		        		<input type="text" name="" placeholder="手机号">
+		        	</div>
+		        	<div class="message">
+		        		
+		        		<input type="text" name="" placeholder="短信验证码">
+		        		<button type="button" class="btn btn-primary">发送验证码</button>
+		        	</div>
+		        	<div class="problem">
+		        		<span>收不到短信？</span>
+		        		<a href="#">获取语音验证码</a>
+		        	</div>
+		        	<div class="set-pwd">
+		        		<input type="text" name="" placeholder="密码6-16位数字、大小写字母或常用符号">
+		        	</div>
+		        </div>
+		        <div class="modal-footer">
+		            
+		            <button type="button" class="btn btn-primary">下一步</button>
+		            <span>
+		            	已经是抽友？马上去<a id="jump-login" data-toggle="modal" href="#">登录</a>
+		            </span>
+		        </div>
+		    </div>
+		    <!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+		</div>
+
+	<!-- 发布信息模态框 -->
+	<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		            <h3 class="modal-title" id="myModalLabel">
+		            	分享新发现
+		        	</h4>
+		        </div>
+		        <div class="modal-body">
+		        	<div class="chooseContent">
+		        		<span><strong>你的图片：</strong>（最多可添加4张图片，支持jpg、jpeg、png、gif格式，大小不得超过10M。）</span>
+		        		<input class="getPhoto" type="file" name="">
+		        		<textarea class="textareaContent" placeholder="说你想说的......"></textarea>
+		        	</div>
+		        	
+		        </div>
+		        <div class="modal-footer">
+		            
+		            <button type="button" id="postOK" class="btn btn-default">发布</button>
+		           
+		        </div>
+		    </div>
+		    <!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+		</div>
+
+
+	<div class="middle">
+		<div class="container">
+			<div class="content">
+				<ul class="content-ul" id="ulFather">
+					<li>
+						<div>
+							<img src="images/meteor shower.jpg">
+						
+							<span>METEOR SHOWER</span>
+							<div class="li-a">
+								<a href="#" id="choosedGood" class="iconfont good">&#xe629; <span class="goodNumber" >0</span></a>
+								<a href="#" class="iconfont review">&#xe640; <span class="reviewNumber">0</span></a>
+								<a href="#" class="iconfont">&#xe60c;</a>
+								<a href="#" class="iconfont">&#xe626;</a>
+							</div>
+						</div>
+						<div class="reviewArea controlReview">
+							<input class="reviewContent" type="text" name="" placeholder="成熟的小建议：友善发言，言之有物">
+							<button class="submitReview">评论</button>
+							<ul class="contentUL">
+								
+							</ul>
+						</div>
+						
+					</li>
+					
+					<li>
+						<div>
+							<img src="images/white.jpg">
+						
+							<span>WHITE LEGS</span>
+							<div class="li-a">
+								<a href="#" class="iconfont good">&#xe629; <span class="goodNumber" >0</span></a>
+								<a href="#" class="iconfont review">&#xe640; <span class="reviewNumber">0</span></a>
+								<a href="#" class="iconfont">&#xe60c;</a>
+								<a href="#" class="iconfont">&#xe626;</a>
+							</div>
+						</div>
+						<div class="reviewArea controlReview">
+							<input class="reviewContent" type="text" name="" placeholder="成熟的小建议：友善发言，言之有物">
+							<button class="submitReview">评论</button>
+							<ul class="contentUL">
+								
+							</ul>
+						</div>
+						
+					</li>
+
+					<li>
+						<div>
+							<img src="images/bg.png">
+						
+							<span>YOUMU KONPAKU</span>
+							<div class="li-a">
+								<a href="#" class="iconfont good">&#xe629; <span class="goodNumber" >0</span></a>
+								<a href="#" class="iconfont review">&#xe640; <span class="reviewNumber">0</span></a>
+								<a href="#" class="iconfont">&#xe60c;</a>
+								<a href="#" class="iconfont">&#xe626;</a>
+							</div>
+						</div>
+						<div class="reviewArea controlReview">
+							<input class="reviewContent" type="text" name="" placeholder="成熟的小建议：友善发言，言之有物">
+							<button class="submitReview">评论</button>
+							<ul class="contentUL">
+								
+							</ul>
+						</div>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="middle-right">
+		<div class="tips">
+			<div>
+				<a href="#">
+					<img class="rule" src="images/rule.png">
+					<span>抽屉生存法则</span>
+					<span>|</span>
+					<span>如何避免自己被封号</span>
+
+				</a>
+				<a href="#">
+					<img class="rule" src="images/manage.png">
+					<span>抽屉管理公告</span>
+					<span>|</span>
+					<span>《生存法则》修正案</span>
+				</a>		
+			</div>
+		</div>
+
+		<div class="top10">
+			<div>
+				<span class="top-vertical"></span>
+				<span class="top-text">最热榜 TOP10</span>
+			</div>
+
+			<div>
+				<ul id="myTab" class="nav nav-tabs">
+				   <li class="active">
+				      <a href="#hour24" data-toggle="tab">
+				         24小时
+				      </a>
+				   </li>
+				   <li><a href="#day3" data-toggle="tab">3天</a></li>
+				   <li><a href="#week" data-toggle="tab">一周</a></li>
+				</ul>
+
+				<div id="myTabContent" class="tab-content">
+				   <div class="tab-pane fade in active" id="hour24">
+				      <ul  class="clear" >
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/1.jpg">
+				      			<span>
+									钢铁洪流曲一响，女王听了想入党！
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/2.jpg">
+				      			<span>
+									怎么做到的一个动作都对不上
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/3.jpg">
+				      			<span>
+									最近总做一个梦
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/4.jpeg">
+				      			<span>
+									岛国网友
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/5.jpg">
+				      			<span>
+									中字脱口秀
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/6.jpg">
+				      			<span>
+									自然能源
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/7.jpeg">
+				      			<span>
+									假装自己是玩具
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/8.jpg">
+				      			<span>
+									中央7台对轻型坦克VT-5的细部介绍
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/9.jpg">
+				      			<span>
+									钱信伊
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/10.jpeg">
+				      			<span>
+									你知道此时此刻
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      </ul>
+				   </div>
+
+
+				   <div class="tab-pane fade" id="day3">
+				     <ul class="clear">
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/11.jpg">
+				      			<span>
+									央视体育：暂停NBA赛事转播
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/12.jpg">
+				      			<span>
+									草草草草草草草
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/13.jpeg">
+				      			<span>
+									美国一位母亲
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/14.jpg">
+				      			<span>
+									做了6季的《梦想改造家》
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/15.jpg">
+				      			<span>
+									鼓楼东大街
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/16.jpg">
+				      			<span>
+									宝宝进超市
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/17.jpg">
+				      			<span>
+									认真看动画片
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/18.jpg">
+				      			<span>
+									钢铁洪流曲一响，女王听了想入党！
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/19.jpeg">
+				      			<span>
+									国庆阅兵结束
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/20.jpg">
+				      			<span>
+									近日，山东德州发现可疑车辆
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      </ul>
+				   </div>
+
+				   <div class="tab-pane fade" id="week">
+				      <ul class="clear">
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/21.jpg">
+				      			<span>
+									国外一网友说自家狗子特别喜欢大海
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/22.jpeg">
+				      			<span>
+									国庆阅兵结束
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/23.jpg">
+				      			<span>
+									香港订《禁止蒙面法》
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/24.jpg">
+				      			<span>
+									厦门泉州都比台北繁荣？
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/25.jpeg">
+				      			<span>
+									中国数据库领域
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/26.jpg">
+				      			<span>
+									今天看到一个消息
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/27.jpg">
+				      			<span>
+									这些人就不怕桥断吗？
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/28.jpeg">
+				      			<span>
+									光头刘sir
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/29.jpg">
+				      			<span>
+									央视体育：暂时NBA赛事转播
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      	<li>
+				      		<a href="#">
+				      			<img src="images/30.jpeg">
+				      			<span>
+									甩动的尾巴
+								</span>
+				      		</a>
+				      		
+				      	</li>
+				      </ul>
+				   </div>
+				   
+				</div>
+			</div>
+		</div>
+
+		<div class="right-photo">
+			<img src="images/big.png">
+		</div>
+	</div>
+
+
+	<div class="side-bar">
+		<ul>
+			<li>
+				<a href="#" class="feedback">
+					反馈
+				</a>
+			</li>
+			<li>
+				<a href="#" class="iconfont side-iconfont">
+					&#xe632;
+				</a>
+			</li>
+			<li>
+				<a href="#" class="iconfont side-iconfont">
+					&#xe643;
+				</a>
+			</li>
+			<li>
+				<a href="#" class="iconfont side-iconfont">
+					&#xe616;
+				</a>
+			</li>
+			<li>
+				<a href="#toptoptop" class="iconfont side-iconfont">
+					&#xe691;
+				</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="footer">
+		<div class="info">
+			<ul class="outer">
+				<li>
+					<ul class="inner">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">42区</a>
+						</li>
+						<li>
+							<a href="#">段子</a>
+						</li>
+						<li>
+							<a href="#">图片</a>
+						</li>
+						<li>
+							<a href="#">挨踢1024</a>
+						</li>
+						<li>
+							<a href="#">你问我答</a>
+						</li>
+					</ul>
+
+				</li>
+				<li>
+					<ul class="inner">
+						<li>
+							<a href="#">人类发布</a>
+						</li>
+						<li>
+							<a href="#">视频</a>
+						</li>
+						
+					</ul>
+
+				</li>
+				<li>
+					<ul class="inner">
+						<li>
+							<a href="#">社会</a>
+						</li>
+						<li>
+							<a href="#">世界</a>
+						</li>
+						<li>
+							<a href="#">科技</a>
+						</li>
+						<li>
+							<a href="#">娱乐</a>
+						</li>
+						<li>
+							<a href="#">体育</a>
+						</li>
+						<li>
+							<a href="#">财经</a>
+						</li>
+						<li>
+							<a href="#">军事</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="inner">
+						<li>
+							<a href="#">关于我们</a>
+						</li>
+						<li>
+							<a href="#">联系我们</a>
+						</li>
+						<li>
+							<a href="#">服务条款</a>
+						</li>
+						<li>
+							<a href="#">隐私政策</a>
+						</li>
+						<li>
+							<a href="#">抽屉生存法则</a>
+						</li>
+						<li>
+							<a href="#">友情链接</a>
+						</li>
+						<li>
+							<a href="#"><strong>RSS</strong>订阅</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="inner">
+						<li>
+							<a href="#">违法和不良信息举报</a>
+						</li>
+						<li>
+							<a href="#">电话：<strong>010-58302039</strong></a>
+						</li>
+						<li>
+							<a href="#">邮箱：<strong>jubao@chouti.com</strong></a>
+						</li>
+						
+						<li class="publicEye">
+							<a href="#"><strong>关注公众号</strong></a>
+						</li>
+						<li class="belowPublicEye">
+							<a href="#" class="iconfont">&#xe616;</a>
+							<a href="#" class="iconfont">&#xe643;</a>
+						</li>
+						
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="QRCode">
+			<h5>下载抽屉客户端</h5>
+			<img src="images/QRCode.png">
+		</div>
+	</div>
+
+	<div class="bottom">
+		<div>
+			<img src="images/gozap.png">
+			<span>旗下站点 Copyright©2019 chouti.com 北京格致璞科技有限公司</span>
+		</div>
+	
+		<div>
+			<a href="#">
+				<img src="images/badge.png">
+				<京ICP备09053974号-3 京公网安备 11010202004562
+			</a>
+		</div>
+	</div>
+  </body>
+</html>
